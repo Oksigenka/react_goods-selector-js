@@ -18,7 +18,7 @@ export const goods = [
 export const App = () => {
   const [selectGood, setSelectGood] = useState('Jam');
 
-  const deleteSelectesGood = good => {
+  const toggleGoodSelection = good => {
     if (selectGood === good) {
       setSelectGood('');
     } else {
@@ -55,7 +55,7 @@ export const App = () => {
                   data-cy={selectGood === good ? 'RemoveButton' : 'AddButton'}
                   type="button"
                   className={selectGood === good ? 'button is-info' : 'button'}
-                  onClick={() => deleteSelectesGood(good)}
+                  onClick={() => toggleGoodSelection(good)}
                 >
                   {selectGood === good ? '-' : '+'}
                 </button>
